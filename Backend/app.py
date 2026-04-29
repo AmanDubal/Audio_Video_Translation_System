@@ -281,24 +281,7 @@ init_database()
 # Routes
 @app.route('/')
 def home():
-    return jsonify({
-        'status': 'success',
-        'message': 'NeuroForge Voice Translation API Running!',
-        'version': '5.0',
-        'database': 'SQLite3 (neuroforge.db)',
-        'processing_available': PROCESSING_AVAILABLE,
-        'supported_formats': list(ALLOWED_EXTENSIONS),
-        'supported_languages': len(get_comprehensive_language_support()),
-        'features': [
-            'Universal Language Input Detection',
-            'Multi-Language Output Support', 
-            'High-Quality Voice Generation', 
-            'Audio Playback Controls',
-            'Audio Download & Streaming',
-            'Real-time Voice Playback',
-            'Multiple Voice Options'
-        ]
-    })
+    return send_from_directory('static', 'login.html')
 
 @app.route('/login')
 def login_page():
