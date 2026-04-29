@@ -150,8 +150,8 @@ def init_database():
             
             # Insert default users
             default_users = [
-                ('superadmin@neuroforge.com', hash_password('Neuro123'), 'Super Administrator', 'superadmin'),
-                ('admin@neuroforge.com', hash_password('admin'), 'Administrator', 'admin'),
+                ('superadmin@gmail.com', hash_password('Neuro123'), 'Super Administrator', 'superadmin'),
+                ('admin@gmail.com', hash_password('NeuroAdmin123'), 'Administrator', 'admin'),
                 ('user@neuroforge.com', hash_password('user123'), 'Demo User', 'user')
             ]
             
