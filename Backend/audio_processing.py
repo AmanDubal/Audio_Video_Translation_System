@@ -9,11 +9,11 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Render/Linux automatically uses installed ffmpeg
-AudioSegment.converter = "ffmpeg"
-AudioSegment.ffprobe = "ffprobe"
-
-logger.info("✅ FFmpeg configured for Render")
-else:
+try:
+    AudioSegment.converter = "ffmpeg"
+    AudioSegment.ffprobe = "ffprobe"
+    logger.info("✅ FFmpeg configured for Render")
+except Exception:
     logger.warning("⚠️ FFmpeg not found. Audio conversion may fail.")
 
 # Initialize recognizer with optimized settings
